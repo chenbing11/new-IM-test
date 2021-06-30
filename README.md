@@ -1,3 +1,5 @@
+# description
+flutter 项目接入融云IM 测试demo效果
 # newimtest
 
 A new Flutter project.
