@@ -24,8 +24,11 @@
     <uses-permission android:name="com.meizu.c2dm.permission.RECEIVE" />
     <!-- MeiZu 配置结束 < -->
    <application
+        android:name="io.flutter.app.FlutterApplication"
         android:label="newimtest"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
