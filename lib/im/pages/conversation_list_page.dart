@@ -28,7 +28,8 @@ class _ConversationListPageState extends State<ConversationListPage>
   List conList = [];
   List<int> displayConversationType = [
     RCConversationType.Private,
-    RCConversationType.Group
+    RCConversationType.Group,
+    RCConversationType.System //新增 系统的
   ];
   ScrollController _scrollController;
   double mPosition = 0;
@@ -80,6 +81,7 @@ class _ConversationListPageState extends State<ConversationListPage>
       }
     });
 
+    // 设置状态监听
     RongIMClient.onConnectionStatusChange = (int connectionStatus) {
       if (RCConnectionStatus.KickedByOtherClient == connectionStatus ||
           RCConnectionStatus.TokenIncorrect == connectionStatus ||

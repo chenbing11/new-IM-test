@@ -70,7 +70,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         (map) {
       _getNotificationQuietHours();
     });
-
+    
+    // 消息接收回调
     prefix.RongIMClient.onMessageReceivedWrapper =
         (prefix.Message msg, int left, bool hasPackage, bool offline) {
       String hasP = hasPackage ? "true" : "false";
@@ -109,7 +110,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             {"message": msg, "left": left, "hasPackage": hasPackage});
       }
     };
-
+    
+    // 接收 iOS/Android 数据的回调
     prefix.RongIMClient.onDataReceived = (Map map) {
       developer.log("object onDataReceived " + map.toString(), name: pageName);
     };
